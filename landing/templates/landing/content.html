@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <section id="home" class="section section--home">
+        <div class="container">
+            <div class="section__body">
+                <div class="section__content">
+                    <div class="content__title">
+                        <h1 class="content__title-slogan">
+                            паспорт <span>дорожной</span> безопасности
+                        </h1>
+                        <p class="content__title-description">
+                            Создание план-схем для паспорта дорожной безопасности. Работаем со
+                            школами, детсадами и другими образовательными организациями.
+                        </p>
+                    </div>
+                    <div class="content__features">
+                        <div class="features__item">
+                            <img
+                                    class="features__item-img"
+                                    src="{% static 'img/icons/feature.png' %}"
+                                    alt=""
+                            />
+                            <div class="features__text">
+                                <h2 class="features__item-title">100% результат</h2>
+                                <p class="features__item-description">
+                                    Качество исполнения план-схем наивысшее. Все очень красиво и
+                                    наглядно
+                                </p>
+                            </div>
+                        </div>
+                        <div class="features__item">
+                            <img
+                                    class="features__item-img"
+                                    src="{% static 'img/icons/feature.png' %}"
+                                    alt=""
+                            />
+                            <div class="features__text">
+                                <h2 class="features__item-title">100% результат</h2>
+                                <p class="features__item-description">
+                                    Качество исполнения план-схем наивысшее. Все очень красиво и
+                                    наглядно
+                                </p>
+                            </div>
+                        </div>
+                        <div class="features__item">
+                            <img
+                                    class="features__item-img"
+                                    src="{% static 'img/icons/feature.png' %}"
+                                    alt=""
+                            />
+                            <div class="features__text">
+                                <h2 class="features__item-title">100% результат</h2>
+                                <p class="features__item-description">
+                                    Качество исполнения план-схем наивысшее. Все очень красиво и
+                                    наглядно
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section__slider">
+                    <div class="dots">
+                        <ul class="slider__dots">
+                            <li class="slider__dots-item active"></li>
+                            <li class="slider__dots-item"></li>
+                            <li class="slider__dots-item"></li>
+                            <li class="slider__dots-item"></li>
+                            <li class="slider__dots-item"></li>
+                        </ul>
+                    </div>
+                    <div class="slider__container">
+
+                        <ul class="slider__list">
+                            <li class="slider__list-item active">
+                                <img
+                                        class="slider__list-img"
+                                        src="{% static 'img/slider/item-01.jpg' %}"
+                                        alt=""
+                                />
+                            </li>
+                            <li class="slider__list-item">
+                                <img
+                                        class="slider__list-img"
+                                        src="{% static 'img/slider/item-02.jpg' %}"
+                                        alt=""
+                                />
+                            </li>
+                            <li class="slider__list-item">
+                                <img
+                                        class="slider__list-img"
+                                        src="{% static 'img/slider/item-03.jpg' %}"
+                                        alt=""
+                                />
+                            </li>
+                            <li class="slider__list-item">
+                                <img
+                                        class="slider__list-img"
+                                        src="{% static 'img/slider/item-04.jpg' %}"
+                                        alt=""
+                                />
+                            </li>
+                            <li class="slider__list-item">
+                                <img
+                                        class="slider__list-img"
+                                        src="{% static 'img/slider/item-05.jpg' %}"
+                                        alt=""
+                                />
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- home-->
+    <section id="order" class="section section__order">
+        <div class="container">
+            <div class="section__body section__body-order">
+                <div class="section__content">
+                    <div class="content__title">
+                        <h2 class="content__title-slogan content__title-slogan--order">
+                            оформление <span>заказа</span>
+                        </h2>
+                    </div>
+                    <div class="content__order">
+
+                        <p class="content__title-description">
+                            Оформить заказ на создание план-схем можно двумя способами:
+                        </p>
+                        <ul class="order__list">
+                            <li class="order__list-item">
+                                позвонить по телефону
+                                <a class="order__list-phone" href="tel:{{ page_context_phone}}"
+                                >{{ page_context_phone}}</a
+                                >
+                            </li>
+                            <li class="order__list-item">
+                                заполнить форму
+                                <a href="" class="order__list-arrow">
+                                    <img src="{% static 'img/icons/arrow.svg' %}" alt=""/>
+                                </a>
+                            </li>
+                        </ul>
+                        <h3 class="content__order-price">
+                            Цена 1 схемы = <span>{{ page_context_price}}</span>рублей
+                        </h3>
+                        <p class="content__title-description">
+                            Обычно для паспорта дорожной безопасности требуется от 5 до 8 схем
+                        </p>
+                        <p class="content__title-description">
+                            В итоге вы получаете план-схемы формата jpg и разрешением 300 dpi.
+                            С таким высоким разрешением при необходимости можно распечатать
+                            план-схемы для стенда или использовать в полиграфии
+                        </p>
+
+                    </div>
+                </div>
+                <div class="section__form">
+                    {% if messages or form.errors %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        {% else %}
+                            {{ form.non_field_errors }}
+                        {% endif %}
+                    {% endif %}
+                    <div class="form__header">
+                        <h3 class="form__header-title">Оставить заявку</h3>
+                        <img class="form_header-icon" src="{% static 'img/icons/send.svg' %}" alt="">
+                    </div>
+                    <div class="form__container">
+
+                        <form action="{% url 'thanks_page' %}" method="POST">
+                            {% csrf_token %}
+
+                            <div class="form__box">
+                                {{ form.name_form}}
+                                <label for="fname">Имя</label>
+                            </div>
+                            <div class="form__box">
+                                {{ form.phone_form}}
+                                <label for="phone">Телефон</label>
+                            </div>
+                            <div class="form__box">
+                                {{ form.email_form }}
+                                <label for="email">E-mail</label>
+                            </div>
+                            <div class="form__box">
+                                {{ form.organization_name_form}}
+                                <label for="orgname">Название организации</label>
+                            </div>
+                            <div class="form__box">
+                                {{ form.organization_address_form}}
+                                <label for="orgadres">Адрес организации</label>
+                            </div>
+                            <div class="form__box">
+                                {{ form.count_images_form}}
+                                <label for="count">Количество схем</label>
+                            </div>
+                                        <div class="form__box">
+                                {{ form.captcha}}
+                                <label for="captcha">{{ form.captcha.errors}}</label>
+                            </div>
+                            <input type="submit" value="Отправить"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

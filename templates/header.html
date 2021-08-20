@@ -1,0 +1,32 @@
+    {% load staticfiles %}
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <div class="logo">
+              <a href="{% url 'index'%}" class="logo__link">
+                <img
+                  class="logo__link-img"
+                  src="{% static 'img/logo.png' %}"
+                  alt="Паспорт дорожной безопасности"
+                />
+              </a>
+              <div class="logo__title">
+                <p class="logo__title-name">паспорт-гибдд.рф</p>
+                <p class="logo__title-description">
+                  Создание план-схем
+                </p>
+              </div>
+            </div>
+            <div class="btn">
+              <button class="btn__link btn__link-order">Заказать </button>
+              <a href="#" class="btn btn__link">
+                <img
+                  class="btn__link-login"
+                  src="{% static 'img/icons/login.svg' %}"
+                  alt="Логин"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>

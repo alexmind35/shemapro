@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block thanks %}
+	<!-- Спасибо -->
+      <section id="home" class="section section--home">
+        <div class="container">
+                     <div class="content__title">
+                <h1 class="content__title-slogan">
+                  ошибка <span>404!</span>
+                </h1>
+                <p class="content__title-description">
+       Данной страницы не существет. Вы можете перейти на <a href="{% url 'index'%}" style="text-decoration: underline">главную</a>
+                </p>
+              </div>
+        </div>
+      </section>
+{% endblock %}
+

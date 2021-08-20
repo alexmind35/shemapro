@@ -1,0 +1,105 @@
+/* 1. Fonts and base */
+@font-face {
+    font-family: "Lato";
+  src: url("../fonts/latoregular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Lato-bold";
+  src: url("../fonts/latobold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+  src: url("../fonts/montserrat.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .w-100 {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.h-402 {
+    height: 402px;
+}
+
+/* Blocks */
+.header {
+    padding: 0;
+    margin: 0;
+    background: #f8f8f8;
+}
+
+.profile__img {
+    height: 40px;
+    width: 40px;
+}
+
+@media (max-width: 640px) {
+    .uk-navbar-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .uk-navbar-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}
+
+.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 20px;
+    min-height: calc(100vh - 0px);
+}
+
+.content__auth {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (max-width: 640px) {
+    .content__auth {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+table td, table th {
+    font-size: calc(10px + 6 * ((100vw - 320px) / 1600));
+}
+
+.footer__wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+}

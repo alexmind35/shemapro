@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/logo/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/logo/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/logo/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/logo/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/logo/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/logo/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/logo/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/logo/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/logo/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'img/logo/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/logo/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/logo/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/logo/favicon-16x16.png' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'img/logo/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <title>Для паспорта дорожной безопасности создание план-схем всего за 1000 рублей</title>
+    <script src="{% static 'js/app.min.js' %}" defer></script>
+</head>
+<body>
+<style>
+    .form__box {
+        display: flex;
+    }
+
+    .captcha {
+        padding-right: 10px;
+
+    }
+
+   .form__box label[for=captcha] {
+        font-size: 10px;
+        position: absolute;
+    left: 109px;
+    top: 0px;
+    }
+    .form__box input:focus~label[for=captcha],
+.form__box input:valid~label[for=captcha] {
+
+    top: -5px;
+    font-size: 8px;
+    opacity: 0.6;
+
+}
+
+
+</style>
+<div class="wrapper">
+    {% include 'header.html' %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block thanks %}
+
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+
+</div>
+<!-- wrapper -->
+<!-- <script src="assets/js/app.min.js"></script> -->
+</body>
+</html>
