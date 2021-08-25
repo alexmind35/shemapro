@@ -17,14 +17,6 @@ class OrderForm(forms.Form):
     count_images_form = forms.CharField(max_length=200, widget=forms.NumberInput(attrs={'id': 'count'}))
     captcha = CaptchaField(label='Are you an human? ')
 
-    def clean(self):
-        cleaned_data = super().clean()
-        phone = cleaned_data.get('phone_form')
-
-        if Order.objects.filter(order_phone=phone).exists():
-            raise forms.ValidationError(f'Номер телефона {phone} уже существует. Пожалуйста, войдите в личный кабинет для заказа')
-
-        return cleaned_data
 
     def form_invalid(self, form):
         messages.error(self.request, form.non_field_errors())

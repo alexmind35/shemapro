@@ -134,12 +134,14 @@
                             Оформить заказ на создание план-схем можно двумя способами:
                         </p>
                         <ul class="order__list">
+                              {% for page in page_list %}
                             <li class="order__list-item">
                                 позвонить по телефону
-                                <a class="order__list-phone" href="tel:{{ page_context_phone}}"
-                                >{{ page_context_phone}}</a
+                                <a class="order__list-phone" href="tel:{{ page.phone_page}}"
+                                >{{ page.phone_page}}</a
                                 >
                             </li>
+                            {% endfor %}
                             <li class="order__list-item">
                                 заполнить форму
                                 <a href="" class="order__list-arrow">
@@ -148,7 +150,9 @@
                             </li>
                         </ul>
                         <h3 class="content__order-price">
-                            Цена 1 схемы = <span>{{ page_context_price}}</span>рублей
+                            {% for page in page_list %}
+                            Цена 1 схемы = <span>{{ page.price_page}}</span>рублей
+                            {% endfor %}
                         </h3>
                         <p class="content__title-description">
                             Обычно для паспорта дорожной безопасности требуется от 5 до 8 схем
@@ -181,32 +185,32 @@
                             {% csrf_token %}
 
                             <div class="form__box">
-                                {{ form.name_form}}
+                                {{ order_form.name_form}}
                                 <label for="fname">Имя</label>
                             </div>
                             <div class="form__box">
-                                {{ form.phone_form}}
+                                {{ order_form.phone_form}}
                                 <label for="phone">Телефон</label>
                             </div>
                             <div class="form__box">
-                                {{ form.email_form }}
+                                {{ order_form.email_form }}
                                 <label for="email">E-mail</label>
                             </div>
                             <div class="form__box">
-                                {{ form.organization_name_form}}
+                                {{ order_form.organization_name_form}}
                                 <label for="orgname">Название организации</label>
                             </div>
                             <div class="form__box">
-                                {{ form.organization_address_form}}
+                                {{ order_form.organization_address_form}}
                                 <label for="orgadres">Адрес организации</label>
                             </div>
                             <div class="form__box">
-                                {{ form.count_images_form}}
+                                {{ order_form.count_images_form}}
                                 <label for="count">Количество схем</label>
                             </div>
                                         <div class="form__box">
-                                {{ form.captcha}}
-                                <label for="captcha">{{ form.captcha.errors}}</label>
+                                {{ order_form.captcha}}
+                                <label for="captcha">{{ order_form.captcha.errors}}</label>
                             </div>
                             <input type="submit" value="Отправить"/>
                         </form>

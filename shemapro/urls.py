@@ -19,14 +19,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from landing import views
-from landing.views import index
+from landing.views import LandingListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    path('', LandingListView.as_view(), name='landing_list'),
     path('captcha/', include('captcha.urls')),
     path('thanks/', views.thanks_page, name='thanks_page'),
 ]
 
 handler404 = "landing.views.page_not"
-

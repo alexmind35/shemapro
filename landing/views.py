@@ -3,6 +3,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.views.generic import ListView
 
 from landing.forms import OrderForm
 from landing.models import Order, InfoPage
@@ -13,10 +14,20 @@ def page_not(request, exception):
     return render(request, '404.html')
 
 
-def index(request):
-    amount = Order(request.POST)
-    form = OrderForm(request.POST)
-    return render(request, 'landing/content.html', {'form': form}, {'amount': amount.order_quantity})
+class LandingListView(ListView):
+    model = InfoPage
+    queryset = InfoPage.objects.all()
+    template_name = 'landing/content.html'
+    context_object_name = 'page_list'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['order_form'] = OrderForm()
+        return context
+
+
+
+
 
 
 def thanks_page(request):
